@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="hy" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ՀՀ Վերընթաց Լանդշաֆտային Գոտիներ | Ինտերակտիվ Ուղեցույց</title>
+  <meta name="description" content="Հայաստանի Հանրապետության վերընթաց լանդշաֆտային գոտիների ամբողջական տվյալներ, ինտերակտիվ բարձրության սիմուլյատոր, համեմատական աղյուսակ, գիտական փաստեր և վիկտորինա:">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏔️</text></svg>">
+</head>
+<body>
+
+  <!-- ========================================================================
+       SITE HEADER & NAVIGATION
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#hero" class="logo-link">
+        <div class="logo-badge">🏔️</div>
+        <div class="logo-text">
+          <span class="logo-title">ԱրմԼանդշաֆտ</span>
+          <span class="logo-subtitle">ՀՀ Վերընթաց Գոտիականություն</span>
+        </div>
+      </a>
+
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="#simulator" class="nav-link">Սարի Սիմուլյատոր</a></li>
+          <li><a href="#zones" class="nav-link">6 Գոտիներ</a></li>
+          <li><a href="#tableSection" class="nav-link">Աղյուսակ</a></li>
+          <li><a href="#theory" class="nav-link">Գիտական Տեսություն</a></li>
+          <li><a href="#facts" class="nav-link">Փաստեր</a></li>
+          <li><a href="#quiz" class="nav-link">Վիկտորինա</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="audioToggleBtn" class="action-btn" title="Ձայնային էֆեկտներ" aria-label="Ձայնային էֆեկտներ">🔊</button>
+        <button id="themeToggleBtn" class="action-btn" title="Փոխել գունային թեման" aria-label="Փոխել գունային թեման">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       HERO SECTION
+       ======================================================================== -->
+  <section id="hero" class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-pill">
+          <span>🌿</span> ՀՀ Աշխարհագրություն և Էկոլոգիա
+        </div>
+        <h1 class="hero-title">
+          Հայաստանի Հանրապետության <br>
+          <span class="gradient-text">Վերընթաց Լանդշաֆտային</span> Գոտիները
+        </h1>
+        <p class="hero-desc">
+          Արաքսի և Դեբեդի չոր կիսաանապատային հովիտներից մինչև Արագածի հավերժական ձյուներն ու նիվալ ժայռերը։ Բացահայտեք Եվրասիայի գրեթե բոլոր բնական գոտիների հերթափոխը ընդամենը 3,700+ մետր ուղղաձիգ բարձրության վրա։
+        </p>
+        <div class="hero-buttons">
+          <a href="#simulator" class="btn btn-primary">
+            <span>⛰️ Փորձարկել Սարի Սիմուլյատորը</span>
+          </a>
+          <a href="#tableSection" class="btn btn-secondary">
+            <span>📊 Դիտել Ամբողջական Աղյուսակը</span>
+          </a>
+        </div>
+        <div class="hero-metrics">
+          <div class="metric-item">
+            <div class="metric-num">3,715 <span>մ</span></div>
+            <div class="metric-label">Ուղղաձիգ տատանում (375-4090մ)</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-num">6 <span>գոտի</span></div>
+            <div class="metric-label">Հիմնական լանդշաֆտային տիպեր</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-num">3,800<span>+</span></div>
+            <div class="metric-label">Բարձրակարգ բույսերի տեսակ</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-num">17,500<span>+</span></div>
+            <div class="metric-label">Կենդանատեսակների հարստություն</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-img-wrap">
+            <img src="images/hero_mountain.jpg" alt="Արագած լեռ և Հայաստանի բնապատկեր" class="hero-img">
+          </div>
+          <div class="hero-overlay-badge">
+            <div class="hero-overlay-title">
+              <span>🏔️</span> Արագած լեռ (4,090 մ)
+            </div>
+            <div class="hero-overlay-subtitle">
+              Հայաստանի ամենաբարձր հրաբխային զանգվածը՝ վերընթաց գոտիականության դասական օրինակ
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       INTERACTIVE MOUNTAIN ELEVATION SIMULATOR
+       ======================================================================== -->
+  <section id="simulator" class="section-padding simulator-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Ինտերակտիվ Սիմուլյատոր</span>
+        <h2 class="section-title">Բարձրացի՛ր Սարն ու Դիտի՛ր Գոտիների Հերթափոխը</h2>
+        <p class="section-lead">
+          Տեղաշարժեք ներքևի սահիչը կամ ընտրեք բարձրության կոճակները. լազերային ցուցիչը կբարձրանա սարն ի վեր՝ ցույց տալով ընթացիկ բարձրության ջերմաստիճանը, բուսականությունը, կենդանական աշխարհն ու համապատասխան լանդշաֆտը:
+        </p>
+      </div>
+
+      <div class="simulator-container">
+        <!-- Left: Interactive Mountain Profile Stage -->
+        <div class="mountain-visualizer-card">
+          <div class="visualizer-top-bar">
+            <div class="visualizer-title">
+              <span>⛰️</span> Հայաստանի Լեռնագրական Կտրվածք (Պրոֆիլ)
+            </div>
+            <div class="visualizer-guide-hint">
+              Կտտացրեք շերտերի վրա կամ քաշեք սահիչը
+            </div>
+          </div>
+
+          <div class="mountain-stage" id="mountainStage">
+            <!-- Dynamic Altitude Laser Guide Line -->
+            <div class="elevation-laser-line" id="elevationLaserLine" style="top: 50%;">
+              <div class="elevation-laser-pin">
+                <span>📍</span> <span id="laserPinVal">1,800 մ</span>
+              </div>
+            </div>
+
+            <!-- Stylized SVG Mountain Profile -->
+            <svg class="mountain-svg" viewBox="0 0 800 500" preserveAspectRatio="none">
+              <defs>
+                <!-- Gradients for Mountain Bands -->
+                <linearGradient id="gradNival" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="60%" stop-color="#cbd5e1"/>
+                  <stop offset="100%" stop-color="#8e44ad"/>
+                </linearGradient>
+
+                <linearGradient id="gradAlpine" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#60a5fa"/>
+                  <stop offset="100%" stop-color="#2563eb"/>
+                </linearGradient>
+
+                <linearGradient id="gradMountainSteppe" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#34d399"/>
+                  <stop offset="100%" stop-color="#059669"/>
+                </linearGradient>
+
+                <linearGradient id="gradDrySteppe" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#facc15"/>
+                  <stop offset="100%" stop-color="#ca8a04"/>
+                </linearGradient>
+
+                <linearGradient id="gradSemiDesert" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#fb923c"/>
+                  <stop offset="100%" stop-color="#c2410c"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Background Sky Mountain Silhouette -->
+              <polygon points="50,500 250,220 380,310 400,280 550,500" fill="rgba(148, 163, 184, 0.15)"/>
+              <polygon points="450,500 620,180 750,500" fill="rgba(148, 163, 184, 0.12)"/>
+
+              <!-- 1. SEMI-DESERT BASE (375m - 1000m) -->
+              <polygon class="m-zone-layer" data-zone="semi-desert"
+                       points="0,500 800,500 780,410 20,410"
+                       fill="url(#gradSemiDesert)"/>
+
+              <!-- 2. DRY STEPPE (1000m - 1400m) -->
+              <polygon class="m-zone-layer" data-zone="dry-steppe"
+                       points="20,410 780,410 730,330 70,330"
+                       fill="url(#gradDrySteppe)"/>
+
+              <!-- 3. MOUNTAIN STEPPE & FOREST (1400m - 2400m) -->
+              <polygon class="m-zone-layer" data-zone="mountain-steppe"
+                       points="70,330 730,330 630,200 170,200"
+                       fill="url(#gradMountainSteppe)"/>
+
+              <!-- 4. ALPINE & SUBALPINE MEADOWS (2400m - 3200m) -->
+              <polygon class="m-zone-layer" data-zone="alpine"
+                       points="170,200 630,200 520,95 280,95"
+                       fill="url(#gradAlpine)"/>
+
+              <!-- 5. NIVAL ZONE & PEAK (3200m - 4090m) -->
+              <polygon class="m-zone-layer" data-zone="nival"
+                       points="280,95 520,95 440,20 400,10 360,20"
+                       fill="url(#gradNival)"/>
+
+              <!-- Visual Elevation Grid Lines & Labels -->
+              <line x1="30" y1="410" x2="770" y2="410" stroke="rgba(255,255,255,0.4)" stroke-dasharray="4,4"/>
+              <text x="40" y="405" fill="#ffffff" font-size="12" font-weight="bold">1,000 մ</text>
+
+              <line x1="80" y1="330" x2="720" y2="330" stroke="rgba(255,255,255,0.4)" stroke-dasharray="4,4"/>
+              <text x="90" y="325" fill="#ffffff" font-size="12" font-weight="bold">1,400 մ</text>
+
+              <line x1="180" y1="200" x2="620" y2="200" stroke="rgba(255,255,255,0.4)" stroke-dasharray="4,4"/>
+              <text x="190" y="195" fill="#ffffff" font-size="12" font-weight="bold">2,400 մ</text>
+
+              <line x1="290" y1="95" x2="510" y2="95" stroke="rgba(255,255,255,0.4)" stroke-dasharray="4,4"/>
+              <text x="300" y="90" fill="#ffffff" font-size="12" font-weight="bold">3,200 մ</text>
+
+              <!-- Peak Label -->
+              <text x="400" y="35" text-anchor="middle" fill="#0f172a" font-size="13" font-weight="900">Արագած (4,090 մ)</text>
+            </svg>
+          </div>
+
+          <!-- Controls: Slider & Quick Preset Pills -->
+          <div class="simulator-control-panel">
+            <div class="slider-label-wrap">
+              <span>Ընտրեք բարձրությունը ծովի մակարդակից.</span>
+              <span class="slider-val-badge" id="sliderAltBadge">1,800 մ</span>
+            </div>
+
+            <input type="range" min="375" max="4090" value="1800" step="15"
+                   class="elevation-slider" id="altitudeSlider"
+                   aria-label="Սարի բարձրության սահիչ">
+
+            <div class="quick-pills-row">
+              <button class="elevation-pill-btn" data-alt="400">📍 400մ Դեբեդի կիրճ</button>
+              <button class="elevation-pill-btn" data-alt="850">📍 850մ Երևան / Արարատ</button>
+              <button class="elevation-pill-btn" data-alt="1300">📍 1,300մ Եղեգնաձոր</button>
+              <button class="elevation-pill-btn active" data-alt="1800">📍 1,800մ Դիլիջան / Սևան</button>
+              <button class="elevation-pill-btn" data-alt="2700">📍 2,700մ Ալպյան գորգեր</button>
+              <button class="elevation-pill-btn" data-alt="3200">📍 3,200մ Քարի լիճ</button>
+              <button class="elevation-pill-btn" data-alt="4090">📍 4,090մ Արագած գագաթ</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Real-time Telemetry Dashboard (Live HUD) -->
+        <div class="telemetry-card">
+          <div>
+            <div class="telemetry-header">
+              <div class="telemetry-badge-row">
+                <span class="telemetry-zone-tag" id="telZoneTag" style="background-color: var(--color-mountain-steppe);">
+                  Սևահողային լեռնատափաստանային
+                </span>
+                <span class="telemetry-alt-tag">Ուղղաձիգ գրադիենտ</span>
+              </div>
+              <h3 class="telemetry-title" id="telZoneTitle">Սևահողային լեռնատափաստանային գոտի</h3>
+              <p class="telemetry-subtitle" id="telZoneSubtitle">1,800 մետր բարձրություն (1400 - 2400 մ)</p>
+            </div>
+
+            <!-- Dynamic Telemetry Stats Grid -->
+            <div class="telemetry-stats-grid">
+              <div class="stat-box">
+                <span class="stat-box-label">☀️ Ամռան ջերմաստիճան</span>
+                <span class="stat-box-value" id="telTempSummer">+18.4°C</span>
+                <span class="stat-box-sub">Հուլիսի միջին գնահատական</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-box-label">❄️ Ձմռան ջերմաստիճան</span>
+                <span class="stat-box-value" id="telTempWinter">-11.6°C</span>
+                <span class="stat-box-sub">Հունվարի միջին գնահատական</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-box-label">🌧️ Տարեկան տեղումներ</span>
+                <span class="stat-box-value" id="telPrecip">~550 մմ</span>
+                <span class="stat-box-sub">Մթնոլորտային խոնավություն</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-box-label">💨 Թթվածին & Ճնշում</span>
+                <span class="stat-box-value" id="telOxygen">81% (817 հՊա)</span>
+                <span class="stat-box-sub">Ծովի մակարդակի համեմատ</span>
+              </div>
+            </div>
+
+            <!-- Bio & Environment Readout -->
+            <div class="telemetry-bio">
+              <div class="bio-row">
+                <div class="bio-title">🌱 Գերիշխող բուսականություն</div>
+                <div class="bio-text" id="telFlora">Հացազգի-տարախոտային, փետրախոտ, սիզախոտ, դաշտավլուկ, կորնգան, երեքնուկ</div>
+              </div>
+              <div class="bio-row">
+                <div class="bio-title">🐾 Կենդանական աշխարհ</div>
+                <div class="bio-text" id="telFauna">Մանր կաթնասուններ, աղվես, գայլ, կաքավ, տափաստանային արծիվ, արտույտ</div>
+              </div>
+              <div class="bio-row">
+                <div class="bio-title">🏞️ Հողեր & Տարածման վայրեր</div>
+                <div class="bio-text" id="telSoil">Լեռնային սևահողեր (հումուս՝ 6 - 12%)</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="telemetry-actions">
+            <button class="btn-open-zone" id="btnOpenCurrentZone">
+              <span>🔍 Բացել Այս Գոտու Ամբողջական Փաստերը ✨</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       6 LANDSCAPE ZONES CARDS
+       ======================================================================== -->
+  <section id="zones" class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">ՀՀ Լանդշաֆտային Հարստությունը</span>
+        <h2 class="section-title">Հայաստանի 6 Գլխավոր Բնական Գոտիները</h2>
+        <p class="section-lead">
+          Ծանոթացեք յուրաքանչյուր գոտու յուրահատկություններին՝ նախալեռնային տաք չորասեր բուսականությունից մինչև բարձրլեռնային սառցադաշտային ժայռեր:
+        </p>
+      </div>
+
+      <div class="zones-grid">
+        <!-- 1. Semi-Desert -->
+        <article class="zone-card" style="border-top: 4px solid var(--color-semi-desert);">
+          <div class="zone-img-wrap">
+            <img src="images/semi_desert.jpg" alt="Անապատակիսաանապատային գոտի" class="zone-img">
+            <span class="zone-card-badge" style="background: var(--color-semi-desert);">Տարածքը՝ ~10%</span>
+            <span class="zone-altitude-tag">📏 Մինչև 800 - 1000 մ</span>
+          </div>
+          <div class="zone-content">
+            <h3 class="zone-title">Անապատակիսաանապատային</h3>
+            <p class="zone-region-text">📍 Արարատյան դաշտ, Վայոց ձորի և Մեղրիի ցածրադիր մասեր</p>
+            <div class="zone-mini-stats">
+              <div class="mini-stat-item">
+                <span class="mini-stat-label">Կլիմա</span>
+                <span class="mini-stat-value">Չոր խիստ ցամաքային</span>
+              </div>
+              <div class="mini-stat-item">
+                <span class="mini-stat-label">Տեղումներ</span>
+                <span class="mini-stat-value">200 - 300 մմ</span>
+              </div>
+              <div class="mini-stat-item">
+                <span class="mini-stat-label">Հող / Հումուս</span>
+                <span class="mini-stat-value">Գորշ / 1 - 2%</span>
+              </div>
+              <div class="mini-stat-item">
+                <span class="mini-stat-label">Ամառ / Ձմեռ</span>
+                <span class="mini-stat-value">+26°C / -5°C</span>
+              </div>
+            </div>
+            <div class="zone-highlight-tags">
+              <span class="z-tag">Օշինդր</span>
+              <span class="z-tag">Գյուրզա</span>
+              <span class="z-tag">Որդան կարմիր</span>
+              <span class="z-tag">Արաքս</span>
+            </div>
+            <button class="zone-footer-btn btn-open-modal" data-zone="semi-desert">
+              <span>Բացել Փաստերն ու Գաղտնիքները ✨</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- 2. Dry Steppe -->
+        <article class="zone-card" style="border-top: 4px solid var(--color-dry-steppe);">
+          <div class="zone-img-wrap">
+            <img src="images/dry_steppe.jpg" alt="Չոր լեռնատափաստանային գոտի" class="zone-img">
+            <span class="zone-card-badge" style="background: var(--color-dry-steppe);">Տարածքը՝ ~15%</span>
+            <span class="zone-altitude-tag">📏 800 - 1400 (1800) մ</span>
+          </div>
+          <div class="zone-content">
+            <h3 class="zone-title">Չոր լեռնատափաստանային</h3>
+            <p class="zone-region-text">📍 Նախալեռներ, Արարատյան գոգավորության եզրեր, Վայոց ձոր</p>
+            <div class="zone-mini-stats">
+              <div class="mini-stat-item">
+                <span class="mini-stat-label">Կլիմա</span>
+                <span class="mini-stat-value">Չոր, տաք ցամաքային</span>
+              </div>
+              <div class="mini-stat-item">
+                <span class="mini-stat-label">Տեղումներ</span>
+                <span class="mini-stat-value">300 - 400 մմ</span>
+              </div>
+              <div class="mini-stat-item">
+                <span class="mini-stat-label">Հող / Հումուս</span>
+                <span class="mini-stat-value">Շագանակագույն / 2 - 4%</span>
+              </div>
+              <div class="mini-stat-item">
+                <span class="mini-stat-label">Ամառ / Ձմեռ</span>
+                <span class="mini-stat-value">+21°C / -6°C</span>
+              </div>
+            </div>
+            <div class="zone-highlight-tags">
+              <span class="z-tag">Գազ & Ուրց</span>
+              <span class="z-tag">Մասրենի</span>
+              <span class="z-tag">Կաքավ</span>
+              <span class="z-tag">Արփա գետ</span>
+            </div>
+            <button class="zone-footer-btn btn-open-modal" data-zone="dry-steppe">
+              <span>Բացել Փաստերն ու Գաղտնիքները ✨</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- 3. Mountain Steppe -->
+        <article class="zone-card" style="border-top: 4px solid var(--color-mountain-steppe);">
+          <div class="zone-img-wrap">
+            <img src="images/mountain_steppe.jpg" alt="Սևահողային լեռնատափաստանային գոտի" class="zone-img">
+            <span class="zone-card-badge" style="background: var(--color-mountain-steppe);">Տարածքը՝ մինչև 25%</span>
+            <span class="zone-altitude-tag">📏 1400 - 2400 մ</span>
+          </div>
+          <div class="zone-content">
+            <h3 class="zone-title">Սևահողային լեռնատափաստանային</h3>
+            <p class="zone-region-text">📍 Շիրակի, Լոռու, Սևանի գոգավորություններ, Զանգեզուր</p>
+            <div class="zone-mini-stats">
+              <div class="mini-stat-item">
+                <span class="mini-stat-label">Կլիմա</span>
+                <span class="mini-stat-value">Չափավոր ցամաքային</span>
+              </div>
+              <div class="mini-stat-item">
+                <span class="mini-stat-label">Տեղումներ</span>
+                <span class="mini-stat-value">500 - 700 մմ</span>
+              </div>
+              <div class="mini-stat-item">
+                <span class="mini-stat-label">Հող / Հումուս</span>
+                <span class="mini-stat-value">Սևահողեր / 6 - 12%</span>
+              </div>
+              <div class="mini-stat-item">
+                <span class="mini-stat-label">Ամառ / Ձմեռ</span>
+                <span class="mini-stat-value">+16°C / -8°C</span>
+              </div>
+            </div>
+            <div class="zone-highlight-tags">
+              <span class="z-tag">Սևանա լիճ</span>
+              <span class="z-tag">Հացազգիներ</span>
+              <span class="z-tag">Գայլ & Աղվես</span>
+              <span class="z-tag">Բարձր բերրիություն</span>
+            </div>
+            <button class="zone-footer-btn btn-open-modal" data-zone="mountain-steppe">
+              <span>Բացել Փաստերն ու Գաղտնիքները ✨</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- 4. Forest -->
+        <article class="zone-card" style="border-top: 4px solid var(--color-forest);">
+          <div class="zone-img-wrap">
+            <img src="images/forest.jpg" alt="Լեռնաանտառային գոտի" class="zone-img">
+            <span class="zone-card-badge" style="background: var(--color-forest);">Տարածքը՝ 10 - 11%</span>
+            <span class="zone-altitude-tag">📏 500 - 2100 (2400) մ</span>
+          </div>
+          <div class="zone-content">
+            <h3 class="zone-title">Լեռնաանտառային</h3>
+            <p class="zone-region-text">📍 Հս-արևելք (Տավուշ, Լոռի), Հր-արևելք (Սյունիք)</p>
+            <div class="zone-mini-stats">
+              <div class="mini-stat-item">
+                <span class="mini-stat-label">Կլիմա</span>
+                <span class="mini-stat-value">Չափավոր տաք, խոնավ</span>
+              </div>
+              <div class="mini-stat-item">
+                <span class="mini-stat-label">Տեղումներ</span>
+                <span class="mini-stat-value">600 - 800 մմ</span>
+              </div>
+              <div class="mini-stat-item">
+                <span class="mini-stat-label">Հող / Հումուս</span>
+                <span class="mini-stat-value">Գորշ & դարչնագույն / 7 - 9%</span>
+              </div>
+              <div class="mini-stat-item">
+                <span class="mini-stat-label">Ամառ / Ձմեռ</span>
+                <span class="mini-stat-value">+17°C / -4.5°C</span>
+              </div>
+            </div>
+            <div class="zone-highlight-tags">
+              <span class="z-tag">Հաճարենի & Կաղնի</span>
+              <span class="z-tag">Գորշ արջ</span>
+              <span class="z-tag">Ազնվացեղ եղնիկ</span>
+              <span class="z-tag">Դեբեդ & Աղստև</span>
+            </div>
+            <button class="zone-footer-btn btn-open-modal" data-zone="forest">
+              <span>Բացել Փաստերն ու Գաղտնիքները ✨</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- 5. Alpine -->
+        <article class="zone-card" style="border-top: 4px solid var(--color-alpine);">
+          <div class="zone-img-wrap">
+            <img src="images/alpine.jpg" alt="Մերձալպյան և ալպյան գոտի" class="zone-img">
+            <span class="zone-card-badge" style="background: var(--color-alpine);">Տարածքը՝ ~8 - 10%</span>
+            <span class="zone-altitude-tag">📏 2400 - 3200 մ</span>
+          </div>
+          <div class="zone-content">
+            <h3 class="zone-title">Մերձալպյան և ալպյան</h3>
+            <p class="zone-region-text">📍 Բարձրլեռնային զանգվածներ (Արագած, Գեղամա, Զանգեզուր)</p>
+            <div class="zone-mini-stats">
+              <div class="mini-stat-item">
+                <span class="mini-stat-label">Կլիմա</span>
+                <span class="mini-stat-value">Ցուրտ լեռնային</span>
+              </div>
+              <div class="mini-stat-item">
+                <span class="mini-stat-label">Տեղումներ</span>
+                <span class="mini-stat-value">800 - 1000 մմ</span>
+              </div>
+              <div class="mini-stat-item">
+                <span class="mini-stat-label">Հող / Հումուս</span>
+                <span class="mini-stat-value">Լեռնամարգագետնային / 8 - 13%</span>
+              </div>
+              <div class="mini-stat-item">
+                <span class="mini-stat-label">Ամառ / Ձմեռ</span>
+                <span class="mini-stat-value">+10°C / -12°C</span>
+              </div>
+            </div>
+            <div class="zone-highlight-tags">
+              <span class="z-tag">Ալպյան գորգեր</span>
+              <span class="z-tag">Բեզոարյան այծ</span>
+              <span class="z-tag">Լեռնային արծիվ</span>
+              <span class="z-tag">Քարի լիճ</span>
+            </div>
+            <button class="zone-footer-btn btn-open-modal" data-zone="alpine">
+              <span>Բացել Փաստերն ու Գաղտնիքները ✨</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- 6. Nival -->
+        <article class="zone-card" style="border-top: 4px solid var(--color-nival);">
+          <div class="zone-img-wrap">
+            <img src="images/nival.jpg" alt="Ձյունամերձ նիվալ գոտի" class="zone-img">
+            <span class="zone-card-badge" style="background: var(--color-nival);">Տարածքը՝ 0.5 - 1%</span>
+            <span class="zone-altitude-tag">📏 3200 - 3500 մ-ից բարձր</span>
+          </div>
+          <div class="zone-content">
+            <h3 class="zone-title">Ձյունամերձ (նիվալ)</h3>
+            <p class="zone-region-text">📍 Ամենաբարձր լեռնագագաթները (Արագած, Կապուտջուղ, Աժդահակ)</p>
+            <div class="zone-mini-stats">
+              <div class="mini-stat-item">
+                <span class="mini-stat-label">Կլիմա</span>
+                <span class="mini-stat-value">Խիստ ցուրտ, բևեռային</span>
+              </div>
+              <div class="mini-stat-item">
+                <span class="mini-stat-label">Տեղումներ</span>
+                <span class="mini-stat-value">> 1000 մմ (ձյուն)</span>
+              </div>
+              <div class="mini-stat-item">
+                <span class="mini-stat-label">Հող / Հումուս</span>
+                <span class="mini-stat-value">Կմախքային / < 1%</span>
+              </div>
+              <div class="mini-stat-item">
+                <span class="mini-stat-label">Ամառ / Ձմեռ</span>
+                <span class="mini-stat-value">+3°C / < -12°C</span>
+              </div>
+            </div>
+            <div class="zone-highlight-tags">
+              <span class="z-tag">Հավերժական ձյուներ</span>
+              <span class="z-tag">Քարաքոսեր</span>
+              <span class="z-tag">Սառցադաշտային հետքեր</span>
+              <span class="z-tag">Գագաթ 4090մ</span>
+            </div>
+            <button class="zone-footer-btn btn-open-modal" data-zone="nival">
+              <span>Բացել Փաստերն ու Գաղտնիքները ✨</span>
+            </button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       COMPREHENSIVE COMPARISON TABLE (ANI'S COMPLETE DATA)
+       ======================================================================== -->
+  <section id="tableSection" class="section-padding table-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Համապարփակ Ամփոփում</span>
+        <h2 class="section-title">ՀՀ Վերընթաց Լանդշաֆտային Գոտիների Համեմատական Աղյուսակ</h2>
+        <p class="section-lead">
+          Հիմնված դպրոցական դասագրքերի և ակադեմիական աշխարհագրական տվյալների վրա: Օգտվեք արագ որոնումից, ֆիլտրերից կամ արտահանեք տվյալները CSV ֆորմատով:
+        </p>
+      </div>
+
+      <!-- Table Toolbar -->
+      <div class="table-toolbar">
+        <div class="table-search-box">
+          <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="tableSearchInput" class="table-search-input"
+                 placeholder="Փնտրել ըստ գոտու, հողի, բույսի, կենդանու կամ գետի..."
+                 aria-label="Որոնել աղյուսակում">
+        </div>
+
+        <div class="table-filter-group">
+          <button class="tbl-filter-btn active" data-filter="all">Բոլորը</button>
+          <button class="tbl-filter-btn" data-filter="lowland">Ցածրադիր (&lt;1000մ)</button>
+          <button class="tbl-filter-btn" data-filter="midland">Միջին (1000-2400մ)</button>
+          <button class="tbl-filter-btn" data-filter="highland">Բարձրլեռնային (&gt;2400մ)</button>
+        </div>
+
+        <div class="table-actions-right">
+          <button id="btnExportCsv" class="table-action-btn" title="Ներբեռնել CSV ֆայլ">
+            <span>📥 CSV Արտահանում</span>
+          </button>
+          <button id="btnPrintTable" class="table-action-btn" title="Տպել աղյուսակը">
+            <span>🖨️ Տպել</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Scrollable Table -->
+      <div class="table-responsive-wrapper">
+        <table class="landscape-table" id="landscapeTable">
+          <thead>
+            <tr>
+              <th>Լանդշաֆտի անուն</th>
+              <th>Տարածք (%)</th>
+              <th>Բարձրություն (մ)</th>
+              <th>Տարածման շրջան</th>
+              <th>Կլիմայի տիպ</th>
+              <th>Ջերմաստիճան (°C)<br><small>(հունվար / հուլիս)</small></th>
+              <th>Տեղումներ (մմ)</th>
+              <th>Հողի տիպ</th>
+              <th>Հումուս (%)</th>
+              <th>Բուսականություն</th>
+              <th>Կենդանական աշխարհ</th>
+              <th>Գետ / Լիճ</th>
+            </tr>
+          </thead>
+          <tbody id="landscapeTableBody">
+            <!-- 1. Semi-Desert -->
+            <tr data-category="lowland" data-zone="semi-desert">
+              <td>
+                <div class="tbl-zone-name">
+                  <span class="tbl-zone-dot" style="background: var(--color-semi-desert);"></span>
+                  <strong>Անապատակիսաանապատային</strong>
+                </div>
+              </td>
+              <td><span class="tbl-badge" style="background: var(--color-semi-desert-bg); color: var(--color-semi-desert);">մոտ 10%</span></td>
+              <td>մինչև 800 - 1000 մ</td>
+              <td>Արարատյան դաշտ, Վայոց ձորի և Մեղրիի ցածրադիր մասեր</td>
+              <td>Չոր, չոր խիստ ցամաքային</td>
+              <td>-4°C-ից -6°C /<br>+24°C-ից +26°C</td>
+              <td>200 - 300 մմ</td>
+              <td>Գորշ կիսաանապատային, աղուտ-ալկալի</td>
+              <td>
+                <div class="tbl-humus-bar-wrap">
+                  <span>1 - 2%</span>
+                </div>
+              </td>
+              <td>Չորասեր (օշինդր, աղաբույսեր, հազարատերևուկ, աղաճանկ)</td>
+              <td>Սողուններ (օձեր, մողեսներ), կրծողներ (ավազամկներ), կարճ</td>
+              <td>Արաքս, Հրազդան (ստորին հոսանք)</td>
+            </tr>
+
+            <!-- 2. Dry Steppe -->
+            <tr data-category="midland" data-zone="dry-steppe">
+              <td>
+                <div class="tbl-zone-name">
+                  <span class="tbl-zone-dot" style="background: var(--color-dry-steppe);"></span>
+                  <strong>Չոր լեռնատափաստանային</strong>
+                </div>
+              </td>
+              <td><span class="tbl-badge" style="background: var(--color-dry-steppe-bg); color: var(--color-dry-steppe);">մոտ 15%</span></td>
+              <td>800 - 1400 մ<br><small>(երբեմն մինչև 1800 մ)</small></td>
+              <td>Նախալեռնային գոտի, Արարատյան գոգավորության եզրեր, Վայոց ձոր</td>
+              <td>Չոր, տաք ցամաքային</td>
+              <td>-4°C-ից -8°C /<br>+20°C-ից +22°C</td>
+              <td>300 - 400 մմ</td>
+              <td>Լեռնաշագանակագույն</td>
+              <td>
+                <div class="tbl-humus-bar-wrap">
+                  <span>2 - 4%</span>
+                </div>
+              </td>
+              <td>Թփուտներ (գազ, մասրենի, չորածաղիկ, ուրց)</td>
+              <td>Դաշտամկներ, համաստերներ, փորսուղներ, թռչուններ</td>
+              <td>Արփա, Քասախ, Ազատ</td>
+            </tr>
+
+            <!-- 3. Mountain Chernozem Steppe -->
+            <tr data-category="midland" data-zone="mountain-steppe">
+              <td>
+                <div class="tbl-zone-name">
+                  <span class="tbl-zone-dot" style="background: var(--color-mountain-steppe);"></span>
+                  <strong>Սևահողային լեռնատափաստանային</strong>
+                </div>
+              </td>
+              <td><span class="tbl-badge" style="background: var(--color-mountain-steppe-bg); color: var(--color-mountain-steppe);">մինչև 25%</span></td>
+              <td>1400 - 2400 մ</td>
+              <td>Շիրակի, Լոռու, Սևանի գոգավորություններ, Զանգեզուրի սարահարթ</td>
+              <td>Չափավոր ցամաքային, տաք ամառով և ցուրտ ձմեռով</td>
+              <td>-6°C-ից -10°C /<br>+15°C-ից +18°C</td>
+              <td>500 - 700 մմ</td>
+              <td>Լեռնային սևահողեր</td>
+              <td>
+                <div class="tbl-humus-bar-wrap">
+                  <strong>6 - 12%</strong>
+                </div>
+              </td>
+              <td>Հացազգի-տարախոտային, հացազգիներ</td>
+              <td>Մանր կաթնասուններ, գիշատիչներ (աղվես, գայլ), կաքավ</td>
+              <td>Սևանա լիճ, Ախուրյան, Որոտան, Հրազդան</td>
+            </tr>
+
+            <!-- 4. Forest -->
+            <tr data-category="midland" data-zone="forest">
+              <td>
+                <div class="tbl-zone-name">
+                  <span class="tbl-zone-dot" style="background: var(--color-forest);"></span>
+                  <strong>Լեռնաանտառային</strong>
+                </div>
+              </td>
+              <td><span class="tbl-badge" style="background: var(--color-forest-bg); color: var(--color-forest);">10 - 11%</span></td>
+              <td>500 - 2100 մ (հս-արլ.) /<br>մինչև 2400 մ (հր-արլ.)</td>
+              <td>Հյուսիս-արևելք (Տավուշ, Լոռի), Հարավ-արևելք (Սյունիք)</td>
+              <td>Չափավոր տաք, խոնավ</td>
+              <td>-3°C-ից -6°C /<br>+15°C-ից +19°C</td>
+              <td>600 - 800 մմ</td>
+              <td>Գորշ անտառային, դարչնագույն</td>
+              <td>
+                <div class="tbl-humus-bar-wrap">
+                  <span>7 - 9%</span>
+                </div>
+              </td>
+              <td>Հաճարենի, կաղնի, բոխի, հացենի, թխկի</td>
+              <td>Այծյամ, գորշ արջ, գայլ, աղվես, անտառային կատու, եղնիկ</td>
+              <td>Դեբեդ, Աղստև, Ողջի</td>
+            </tr>
+
+            <!-- 5. Alpine & Subalpine -->
+            <tr data-category="highland" data-zone="alpine">
+              <td>
+                <div class="tbl-zone-name">
+                  <span class="tbl-zone-dot" style="background: var(--color-alpine);"></span>
+                  <strong>Մերձալպյան և ալպյան</strong>
+                </div>
+              </td>
+              <td><span class="tbl-badge" style="background: var(--color-alpine-bg); color: var(--color-alpine);">մոտ 8 - 10%</span></td>
+              <td>2400 - 3200 մ</td>
+              <td>Բարձրլեռնային շրջաններ (Արագած, Գեղամա, Վարդենիսի, Զանգեզուր)</td>
+              <td>Ցուրտ լեռնային</td>
+              <td>-10°C-ից -14°C /<br>+8°C-ից +12°C</td>
+              <td>800 - 1000 մմ</td>
+              <td>Լեռնամարգագետնային</td>
+              <td>
+                <div class="tbl-humus-bar-wrap">
+                  <strong>8 - 13%</strong>
+                </div>
+              </td>
+              <td>Գետնատարած բուսականություն, խոտհարքներ (ալպյան գորգեր, ծնծաղիկ)</td>
+              <td>Լեռնային արծիվ, մեղուներ, փոշոտող միջատներ, բեզոարյան այծ</td>
+              <td>Արփի լիճ, Քարի լիճ, Սև լիճ</td>
+            </tr>
+
+            <!-- 6. Nival -->
+            <tr data-category="highland" data-zone="nival">
+              <td>
+                <div class="tbl-zone-name">
+                  <span class="tbl-zone-dot" style="background: var(--color-nival);"></span>
+                  <strong>Ձյունամերձ (նիվալ)</strong>
+                </div>
+              </td>
+              <td><span class="tbl-badge" style="background: var(--color-nival-bg); color: var(--color-nival);">0.5 - 1%</span></td>
+              <td>3200 - 3500 մ-ից բարձր</td>
+              <td>Ամենաբարձր լեռնագագաթները (Արագած, Կապուտջուղ)</td>
+              <td>Խիստ ցուրտ, ցրտաշունչ</td>
+              <td>-12°C-ից ցածր /<br>+2°C-ից +5°C</td>
+              <td>> 1000 մմ</td>
+              <td>Նախնական / թույլ զարգացած լեռնամարգագետնային</td>
+              <td>
+                <div class="tbl-humus-bar-wrap">
+                  <span>&lt; 1%</span>
+                </div>
+              </td>
+              <td>Մամուռներ, քարաքոսեր</td>
+              <td>Շատ աղքատ (պատահական թռչուններ)</td>
+              <td>Սառցադաշտային փոքր լճակներ, գետերի ակունքներ</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       AREA DISTRIBUTION CHART (VISUAL BREAKDOWN)
+       ======================================================================== -->
+  <section id="chartSection" class="section-padding chart-section">
+    <div class="container">
+      <div class="chart-card">
+        <span class="section-tag">Վիճակագրություն</span>
+        <h3 class="section-title" style="font-size: 1.8rem; margin-bottom: 12px;">
+          Լանդշաֆտների Տարածքային Համամասնությունը ՀՀ-ում
+        </h3>
+        <p class="section-lead" style="font-size: 0.95rem;">
+          Տեսանելի է, որ ՀՀ տարածքի առյուծի բաժինը (շուրջ 40%) պատկանում է տափաստանային լանդշաֆտներին, իսկ անտառներն ու բարձրլեռնային նիվալ շրջանները պահանջում են հատուկ պահպանություն:
+        </p>
+
+        <div class="chart-bars-wrap">
+          <!-- 1. Mountain Steppe -->
+          <div class="chart-bar-item">
+            <div class="chart-bar-header">
+              <span>🌾 Սևահողային լեռնատափաստանային</span>
+              <span>25%</span>
+            </div>
+            <div class="chart-bar-outer">
+              <div class="chart-bar-fill" data-width="25%" style="width: 0%; background: var(--color-mountain-steppe);"></div>
+            </div>
+          </div>
+
+          <!-- 2. Dry Steppe -->
+          <div class="chart-bar-item">
+            <div class="chart-bar-header">
+              <span>🌾 Չոր լեռնատափաստանային</span>
+              <span>15%</span>
+            </div>
+            <div class="chart-bar-outer">
+              <div class="chart-bar-fill" data-width="15%" style="width: 0%; background: var(--color-dry-steppe);"></div>
+            </div>
+          </div>
+
+          <!-- 3. Forest -->
+          <div class="chart-bar-item">
+            <div class="chart-bar-header">
+              <span>🌲 Լեռնաանտառային</span>
+              <span>11%</span>
+            </div>
+            <div class="chart-bar-outer">
+              <div class="chart-bar-fill" data-width="11%" style="width: 0%; background: var(--color-forest);"></div>
+            </div>
+          </div>
+
+          <!-- 4. Semi-desert -->
+          <div class="chart-bar-item">
+            <div class="chart-bar-header">
+              <span>🏜️ Անապատակիսաանապատային</span>
+              <span>10%</span>
+            </div>
+            <div class="chart-bar-outer">
+              <div class="chart-bar-fill" data-width="10%" style="width: 0%; background: var(--color-semi-desert);"></div>
+            </div>
+          </div>
+
+          <!-- 5. Alpine -->
+          <div class="chart-bar-item">
+            <div class="chart-bar-header">
+              <span>🌺 Մերձալպյան և ալպյան</span>
+              <span>9%</span>
+            </div>
+            <div class="chart-bar-outer">
+              <div class="chart-bar-fill" data-width="9%" style="width: 0%; background: var(--color-alpine);"></div>
+            </div>
+          </div>
+
+          <!-- 6. Nival -->
+          <div class="chart-bar-item">
+            <div class="chart-bar-header">
+              <span>❄️ Ձյունամերձ (նիվալ)</span>
+              <span>1%</span>
+            </div>
+            <div class="chart-bar-outer">
+              <div class="chart-bar-fill" data-width="1%" style="width: 0%; background: var(--color-nival);"></div>
+            </div>
+          </div>
+
+          <!-- 7. Other (Water, Rocks) -->
+          <div class="chart-bar-item">
+            <div class="chart-bar-header">
+              <span>🌊 Ջրային մակերեսներ (Սևանա լիճ) և մերկ ժայռեր</span>
+              <span>~29%</span>
+            </div>
+            <div class="chart-bar-outer">
+              <div class="chart-bar-fill" data-width="29%" style="width: 0%; background: #64748b;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       THEORY: WHAT IS VERTICAL ZONATION? (ԳԻՏԱԿԱՆ ՏԵՍՈՒԹՅՈՒՆ)
+       ======================================================================== -->
+  <section id="theory" class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Գիտական Հիմունքներ</span>
+        <h2 class="section-title">Ի՞նչ է Վերընթաց Գոտիականությունը</h2>
+        <p class="section-lead">
+          Ինչո՞ւ է լեռնային ռելիեֆում բնությունը փոխվում տասնյակ անգամ ավելի արագ, քան հարթավայրերում. հիմնարար աշխարհագրական օրինաչափությունները:
+        </p>
+      </div>
+
+      <div class="theory-grid">
+        <!-- 1. Lapse Rate -->
+        <div class="theory-card">
+          <div class="theory-icon-wrap">🌡️</div>
+          <h3 class="theory-card-title">Ուղղաձիգ Ջերմային Գրադիենտ</h3>
+          <p class="theory-card-text">
+            Յուրաքանչյուր 100 մետր վեր բարձրանալիս օդի ջերմաստիճանը նվազում է միջինում <strong>0.55°C - 0.6°C-ով</strong>: Սա պայմանավորված է մթնոլորտային ճնշման և օդի խտության նվազմամբ, որի պատճառով օդն ավելի քիչ է կլանում երկրի մակերևույթից անդրադարձող ջերմությունը:
+          </p>
+          <span class="theory-badge">Հիմնական ֆիզիկական գործոն</span>
+        </div>
+
+        <!-- 2. Compactness -->
+        <div class="theory-card">
+          <div class="theory-icon-wrap">🗺️</div>
+          <h3 class="theory-card-title">Հայաստանի Լեռնագրական Հրաշքը</h3>
+          <p class="theory-card-text">
+            Հայաստանն ունի ընդամենը 29.7 հազար կմ² տարածք, բայց բարձրությունների տատանումը կազմում է <strong>3,715 մետր</strong> (Դեբեդի 375մ-ից մինչև Արագածի 4090մ): Հորիզոնական հարթավայրում նման բնական գոտիների հերթափոխ տեսնելու համար պետք կլիներ անցնել ավելի քան <strong>3,000 կիլոմետր</strong>՝ Սև ծովից մինչև Արկտիկա:
+          </p>
+          <span class="theory-badge">Ամպլիտուդ՝ 3,715 մ</span>
+        </div>
+
+        <!-- 3. Aspect / Exposition -->
+        <div class="theory-card">
+          <div class="theory-icon-wrap">☀️</div>
+          <h3 class="theory-card-title">Լանջերի Կողմնադրություն (Էքսպոզիցիա)</h3>
+          <p class="theory-card-text">
+            Հարավահայաց լանջերը ստանում են արեգակնային առատ էներգիա, ինչի պատճառով դրանք չոր են, քարքարոտ և ծածկված չորասեր թփուտներով: Հյուսիսահայաց լանջերն ավելի քիչ են տաքանում, պահպանում են հողի խոնավությունը, և հենց այդ պատճառով անտառներն աճում են հիմնականում հյուսիսային և հյուսիս-արևելյան լանջերին:
+          </p>
+          <span class="theory-badge">Միկրոկլիմայի ձևավորում</span>
+        </div>
+
+        <!-- 4. Thermal Inversion -->
+        <div class="theory-card">
+          <div class="theory-icon-wrap">❄️</div>
+          <h3 class="theory-card-title">Ջերմաստիճանային Ինվերսիա</h3>
+          <p class="theory-card-text">
+            Ձմռան պարզկա եղանակին ծանր, սառը օդը սահում և կուտակվում է փակ գոգավորությունների հատակում (Արարատյան դաշտ, Աշոցք): Այդ պատճառով առաջանում է շրջադասություն (ինվերսիա). ներքևում ավելի ցուրտ է, քան նախալեռներում: Աշոցքում գրանցվել է Հայաստանի բացարձակ նվազագույն ջերմաստիճանը՝ <strong>-42°C</strong>:
+          </p>
+          <span class="theory-badge">Հայաստանի «Սիբիրը»</span>
+        </div>
+
+        <!-- 5. Rain Shadow -->
+        <div class="theory-card">
+          <div class="theory-icon-wrap">🌧️</div>
+          <h3 class="theory-card-title">«Անձրևային Ստվեր» և Գոգավորություններ</h3>
+          <p class="theory-card-text">
+            Սև ծովից և Կասպիցից եկող խոնավ օդային հոսանքներն իրենց տեղումների առյուծի բաժինը թողնում են արտաքին լեռնաշղթաների (Վիրահայոց, Գուգարաց, Զանգեզուրի) լանջերին: Ներքին շրջանները (Շիրակ, Սևան, Երևան) մնում են «անձրևային ստվերում», ինչի պատճառով այնտեղ անտառներ չկան:
+          </p>
+          <span class="theory-badge">Խոնավության բաշխում</span>
+        </div>
+
+        <!-- 6. Biodiversity Hotspot -->
+        <div class="theory-card">
+          <div class="theory-icon-wrap">🦋</div>
+          <h3 class="theory-card-title">Համաշխարհային Կենսաբազմազանության Օջախ</h3>
+          <p class="theory-card-text">
+            Բարձրությունների բազմազանության շնորհիվ Հայաստանը դասվում է մոլորակի ամենահարուստ 25 կենսաբազմազանության «թեժ կետերի» շարքին (Caucasus Hotspot): 1 կմ²-ի վրա հաշվարկված բույսերի տեսակների խտությամբ Հայաստանն աշխարհում զբաղեցնում է առաջատար տեղերից մեկը:
+          </p>
+          <span class="theory-badge">3,800+ բուսատեսակ</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FASCINATING ACCORDION FACTS ("ԲԱՑՎՈՂ ՓԱՍՏԵՐ")
+       ======================================================================== -->
+  <section id="facts" class="section-padding facts-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Հետաքրքրաշարժ Փաստեր</span>
+        <h2 class="section-title">Բացահայտի՛ր Հայաստանի Բնության Գաղտնիքները</h2>
+        <p class="section-lead">
+          Սեղմեք յուրաքանչյուր հարցի կամ թեմայի վրա՝ բացելու հետաքրքիր գիտական և պատմական բացատրությունները:
+        </p>
+      </div>
+
+      <div class="accordion-container">
+        <!-- Fact 1: Vordan Karmir -->
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="acc-title-wrap">
+              <span class="acc-icon">🔴</span>
+              <span class="acc-title">Արարատյան Որդան Կարմիր. անապատի կենդանի գանձը</span>
+            </div>
+            <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div class="accordion-content">
+            <p class="accordion-text">
+              Արարատյան դաշտի աղակալված կիսաանապատներում՝ աղածաղիկների և եղեգների արմատների վրա, ապրում է բացառիկ միջատ՝ <strong>Արարատյան որդան կարմիրը (Porphyrophora hamelii)</strong>: Դեռևս հնագույն ժամանակներից հայերը նրանից ստանում էին հայտնի կարմիր ներկը, որով ներկվել են արքայական ծիրանիները և գրվել միջնադարյան մանրանկարները: Տարեկան միայն մի քանի օր՝ սեպտեմբեր-հոկտեմբեր ամիսների վաղ առավոտյան, էգ որդանները դուրս են գալիս հողի մակերես: Այսօր այն գրանցված է ՀՀ Կարմիր գրքում և պահպանվում է հատուկ արգելավայրում:
+            </p>
+            <div class="acc-highlight-box">
+              💡 Փաստ. Որդան կարմիրով ներկված հայկական մագաղաթների գույնը չի խամրել անգամ 1500 տարի անց:
+            </div>
+          </div>
+        </div>
+
+        <!-- Fact 2: Alpine Carpet UV -->
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="acc-title-wrap">
+              <span class="acc-icon">🌸</span>
+              <span class="acc-title">Ինչո՞ւ են ալպյան ծաղիկները գաճաճ, բայց արտասովոր վառվռուն</span>
+            </div>
+            <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div class="accordion-content">
+            <p class="accordion-text">
+              2800 մետրից բարձր ալպյան գորգերում բույսերի ցողունները չեն գերազանցում 2-5 սանտիմետրը: Սա էվոլյուցիոն հարմարվողականություն է. նախ՝ գետնին կպած մնալով նրանք խուսափում են ուժգին լեռնային քամիներից և գիշերային սառնամանիքներից, իսկ երկրորդ՝ բջիջներում կուտակվող անտոցիանային վառ գունանյութերը ծառայում են որպես բնական «արևապաշտպան ակնոցներ»՝ պաշտպանելով բույսը քայքայիչ ուլտրամանուշակագույն (UV) ճառագայթներից:
+            </p>
+            <div class="acc-highlight-box">
+              💡 Փաստ. Բարձրլեռնային կարճատև ամռան (մոտ 2 ամիս) ընթացքում վառ գույները գրավում են սակավաթիվ փոշոտող միջատներին:
+            </div>
+          </div>
+        </div>
+
+        <!-- Fact 3: Kari Lake -->
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="acc-title-wrap">
+              <span class="acc-icon">💎</span>
+              <span class="acc-title">Քարի լիճ. սառցադաշտային և հրաբխային հրաշք 3185 մետրի վրա</span>
+            </div>
+            <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div class="accordion-content">
+            <p class="accordion-text">
+              Արագածի հարավային լանջին՝ 3185 մետր բարձրության վրա, գտնվում է Քարի լիճը: Այն առաջացել է հին չորրորդական սառցապատման մորենների և հրաբխային խառնարանի փոխազդեցությունից: Տարվա մեծ մասը լիճը ծածկված է սառույցով և ձյունով, իսկ ջրի ջերմաստիճանը ամռանն անգամ հազվադեպ է գերազանցում +10°C-ը: Լճի ափին է գտնվում Արագածի տիեզերական ճառագայթների ֆիզիկայի գիտահետազոտական կայանը:
+            </p>
+            <div class="acc-highlight-box">
+              💡 Փաստ. Քարի լճում ապրում է սառնասեր իշխան տեսակի ձուկ, իսկ ափերին կարելի է հանդիպել հազվագյուտ լեռնային ծաղիկների:
+            </div>
+          </div>
+        </div>
+
+        <!-- Fact 4: 1000-year Yew trees -->
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="acc-title-wrap">
+              <span class="acc-icon">🌲</span>
+              <span class="acc-title">Ախնաբաթի և Ծաղկավանի հնագույն կենիների պուրակը</span>
+            </div>
+            <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div class="accordion-content">
+            <p class="accordion-text">
+              Տավուշի մարզում (Դիլիջան ազգային պարկի տարածքում) պահպանվել է <strong>հատապտղային կենու (Taxus baccata)</strong> ռելիկտային եզակի պուրակ: Այստեղ կան ծառեր, որոնց տարիքը գերազանցում է <strong>800 - 1200 տարին</strong>: Կենին անվանում են «կարմիր ծառ»՝ իր ամուր, չփտող փայտանյութի պատճառով: Պատմականորեն այն այնքան բարձր է գնահատվել, որ նրանից պատրաստվել են թագավորական կահույք և սրբազան մասունքատուփեր:
+            </p>
+            <div class="acc-highlight-box">
+              💡 Փաստ. Կենու գրեթե բոլոր մասերը (բացի հատապտղի քաղցր մսոտ մասից) պարունակում են տաքսին կոչվող թունավոր նյութը:
+            </div>
+          </div>
+        </div>
+
+        <!-- Fact 5: Caucasian Leopard -->
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="acc-title-wrap">
+              <span class="acc-icon">🐆</span>
+              <span class="acc-title">Կովկասյան ընձառյուծ. Հայաստանի ժայռերի գաղտնի տիրակալը</span>
+            </div>
+            <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div class="accordion-content">
+            <p class="accordion-text">
+              Կովկասյան ընձառյուծը (Panthera pardus saxicolor) Հայաստանի բնության ամենավտանգված և միևնույն ժամանակ ամենահզոր կենդանիներից է: Վերջին տարիներին Խոսրովի անտառում, Գնիշիկում և Սյունիքի «Արևիկ» ազգային պարկում տեղադրված ֆոտոթակարդները բազմիցս ֆիքսել են այս հրաշք կենդանուն և նրա ձագերին: Ընձառյուծը շրջում է չոր տափաստանային խոր կիրճերից մինչև ալպյան ժայռեր՝ որսալով բեզոարյան այծեր և վայրի խոզեր:
+            </p>
+            <div class="acc-highlight-box">
+              💡 Փաստ. Հայաստանում այսօր հաշվառվում է մոտ 10-15 ընձառյուծ, և նրանց պահպանությունը պետական խստագույն հսկողության տակ է:
+            </div>
+          </div>
+        </div>
+
+        <!-- Fact 6: Aragats 4 Peaks -->
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="acc-title-wrap">
+              <span class="acc-icon">🌋</span>
+              <span class="acc-title">Արագածի հրաբխային խառնարանը և 4 գագաթները</span>
+            </div>
+            <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div class="accordion-content">
+            <p class="accordion-text">
+              Արագածը միլիոնավոր տարիներ առաջ եղել է հսկայական ստրատոհրաբուխ, որի բարձրությունը գերազանցել է 6000 մետրը: Հզոր պայթյունի և փլուզման հետևանքով նրա գագաթը վերածվել է 350 մետր խորությամբ և 3 կմ տրամագծով հսկայական խառնարանի: Խառնարանի եզրերին մնացել են 4 սրածայր գագաթները՝ Հյուսիսային (4090մ), Արևմտյան (3995մ), Արևելյան (3908մ) և Հարավային (3887մ):
+            </p>
+            <div class="acc-highlight-box">
+              💡 Փաստ. Խառնարանի հատակին նույնիսկ օգոստոսի տապին կարելի է տեսնել մետրերով ձնածածկույթ և սառցադաշտային առվակներ:
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       INTERACTIVE KNOWLEDGE QUIZ
+       ======================================================================== -->
+  <section id="quiz" class="section-padding quiz-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Գիտելիքների Ստուգում</span>
+        <h2 class="section-title">Ինտերակտիվ Վիկտորինա՝ ՀՀ Լանդշաֆտների Մասին</h2>
+        <p class="section-lead">
+          Ստուգեք, թե որքան լավ եք յուրացրել դասագրքի նյութերը և վերընթաց գոտիականության օրինաչափությունները:
+        </p>
+      </div>
+
+      <div class="quiz-card" id="quizCard">
+        <div class="quiz-progress-bar-wrap">
+          <div class="quiz-progress-bar" id="quizProgressBar"></div>
+        </div>
+
+        <!-- Question View -->
+        <div id="quizQuestionView">
+          <div class="quiz-header">
+            <span class="quiz-step-tag" id="quizStepTag">Հարց 1 / 5</span>
+            <span class="quiz-score-live" id="quizScoreLive">Միավորներ՝ 0</span>
+          </div>
+
+          <h3 class="quiz-question-title" id="quizQuestionTitle">
+            Ո՞ր լանդշաֆտային գոտին է զբաղեցնում ամենամեծ տարածքը (մինչև 25%) Հայաստանի Հանրապետությունում:
+          </h3>
+
+          <div class="quiz-options-list" id="quizOptionsList">
+            <!-- Dynamic Buttons will be injected by script.js -->
+          </div>
+
+          <div class="quiz-explanation" id="quizExplanation"></div>
+
+          <div style="text-align: right;">
+            <button class="quiz-next-btn" id="quizNextBtn" style="display: none;">
+              Հաջորդ հարցը ➡️
+            </button>
+          </div>
+        </div>
+
+        <!-- Result View -->
+        <div class="quiz-result-view" id="quizResultView">
+          <div class="result-badge-icon">🏆</div>
+          <h3 class="result-title">Վիկտորինան Ավարտվեց!</h3>
+          <p class="result-desc" id="quizResultMessage">
+            Ձեր արդյունքն է՝ <strong id="quizFinalScore" style="color: var(--accent-color); font-size: 1.4rem;">0 / 5</strong>
+          </p>
+          <button class="btn btn-primary" id="quizRestartBtn">
+            <span>🔄 Փորձել Կրկին</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       MODAL DIALOG (DEEP-DIVE DETAILS POPUP)
+       ======================================================================== -->
+  <div class="modal-overlay" id="zoneModalOverlay" role="dialog" aria-modal="true">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Փակել">✕</button>
+
+      <div class="modal-hero">
+        <img src="images/mountain_steppe.jpg" alt="Գոտու պատկեր" class="modal-hero-img" id="modalHeroImg">
+        <div class="modal-hero-overlay">
+          <h2 class="modal-title" id="modalTitle">Սևահողային լեռնատափաստանային գոտի</h2>
+          <p class="modal-subtitle" id="modalSubtitle">Հայաստանի ամենաընդարձակ հացահատիկային և արոտային շտեմարանը</p>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <!-- 3 Quick Metrics -->
+        <div class="modal-info-grid">
+          <div class="modal-metric-box">
+            <span class="modal-metric-label">📏 Տարածման բարձրություն</span>
+            <div class="modal-metric-val" id="modalAltVal">1400 - 2400 մ</div>
+          </div>
+          <div class="modal-metric-box">
+            <span class="modal-metric-label">🗺️ Զբաղեցրած տարածք</span>
+            <div class="modal-metric-val" id="modalAreaVal">մինչև 25%</div>
+          </div>
+          <div class="modal-metric-box">
+            <span class="modal-metric-label">🌱 Հողի տիպ & Հումուս</span>
+            <div class="modal-metric-val" id="modalSoilVal">Լեռնային սևահողեր (6 - 12%)</div>
+          </div>
+        </div>
+
+        <!-- Detailed Sections -->
+        <div class="modal-rich-section">
+          <h4 class="modal-section-title"><span>🌤️</span> Կլիմայական Պայմաններ</h4>
+          <p class="modal-section-p" id="modalClimateText">
+            Չափավոր ցամաքային, տաք ամառով և ցուրտ ձմեռով: Ջերմաստիճան՝ -6°C-ից -10°C / +15°C-ից +18°C: Տեղումներ՝ 500 - 700 մմ:
+          </p>
+        </div>
+
+        <div class="modal-rich-section">
+          <h4 class="modal-section-title"><span>🌿</span> Բուսական Աշխարհ (Ֆլորա)</h4>
+          <p class="modal-section-p" id="modalFloraText">
+            Հացազգի-տարախոտային, հացազգիներ (փետրախոտ, սիզախոտ, կորնգան, երեքնուկ):
+          </p>
+        </div>
+
+        <div class="modal-rich-section">
+          <h4 class="modal-section-title"><span>🐺</span> Կենդանական Աշխարհ (Ֆաունա)</h4>
+          <p class="modal-section-p" id="modalFaunaText">
+            Մանր կաթնասուններ, գիշատիչներ (աղվես, գայլ), կաքավ, տափաստանային արծիվ:
+          </p>
+        </div>
+
+        <div class="modal-rich-section">
+          <h4 class="modal-section-title"><span>💧</span> Գետային Ցանց և Ջրագրություն</h4>
+          <p class="modal-section-p" id="modalWaterText">
+            Սևանա լիճ, Ախուրյան, Որոտան, Հրազդան:
+          </p>
+        </div>
+
+        <div class="modal-rich-section">
+          <h4 class="modal-section-title"><span>📕</span> ՀՀ Կարմիր Գրքի Տեսակներ</h4>
+          <p class="modal-section-p" id="modalRedBookText">
+            Հայկական որոր (Larus armenicus), մոխրագույն կռունկ, դաշտային մկնաճուռակ:
+          </p>
+        </div>
+
+        <div class="modal-rich-section">
+          <h4 class="modal-section-title"><span>🛡️</span> Պահպանվող Տարածքներ և Արգելոցներ</h4>
+          <p class="modal-section-p" id="modalReservesText">
+            «Սևան» ազգային պարկ, «Արփի լիճ» ազգային պարկ:
+          </p>
+        </div>
+
+        <div class="modal-rich-section">
+          <h4 class="modal-section-title"><span>✨</span> Հետաքրքիր Փաստեր և Առանձնահատկություններ</h4>
+          <p class="modal-section-p" id="modalFactsText">
+            Սևահողային լեռնատափաստաններն ունեն հումուսի ապշեցուցիչ պարունակություն:
+          </p>
+        </div>
+
+        <div class="modal-rich-section">
+          <h4 class="modal-section-title"><span>🚜</span> Տնտեսական Նշանակություն</h4>
+          <p class="modal-section-p" id="modalHumanUseText">
+            Հացահատիկի (ցորեն, գարի) և կարտոֆիլի գլխավոր մշակում, կաթնամսատու անասնապահություն:
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-link" style="margin-bottom: 8px;">
+            <div class="logo-badge">🏔️</div>
+            <div class="logo-text">
+              <span class="logo-title">ԱրմԼանդշաֆտ</span>
+              <span class="logo-subtitle">ՀՀ Վերընթաց Գոտիականություն</span>
+            </div>
+          </div>
+          <p>
+            Կրթական և ինտերակտիվ նախագիծ՝ նվիրված Հայաստանի Հանրապետության բնական հարստությանը, վերընթաց լանդշաֆտային գոտիականությանը և էկոլոգիական բազմազանությանը:
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Արագ Անցումներ</h4>
+          <ul class="footer-links">
+            <li><a href="#simulator">⛰️ Սարի Սիմուլյատոր</a></li>
+            <li><a href="#zones">🌿 6 Գլխավոր Գոտիներ</a></li>
+            <li><a href="#tableSection">📊 Համեմատական Աղյուսակ</a></li>
+            <li><a href="#theory">🔬 Գիտական Տեսություն</a></li>
+            <li><a href="#facts">✨ Բացվող Փաստեր</a></li>
+            <li><a href="#quiz">🏆 Ինտերակտիվ Վիկտորինա</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Տվյալների Աղբյուրներ</h4>
+          <ul class="footer-links">
+            <li><span>📚 ՀՀ Աշխարհագրության դպրոցական դասագրքեր</span></li>
+            <li><span>🗺️ ՀՀ Ազգային Ատլաս (Հատոր Ա և Բ)</span></li>
+            <li><span>📕 ՀՀ Կարմիր Գիրք (Բույսեր և Կենդանիներ)</span></li>
+            <li><span>🌐 ՀՀ Շրջակա միջավայրի նախարարություն</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 ԱրմԼանդշաֆտ | Պատրաստված է Անիի համար</div>
+        <div>ՀՀ Աշխարհագրական և Լանդշաֆտային Ուսումնական Հարթակ</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
