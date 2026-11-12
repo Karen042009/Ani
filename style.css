@@ -2040,6 +2040,83 @@ button {
   color: var(--accent-color);
 }
 
+/* Telemetry Mobile Tabs */
+.telemetry-mobile-tabs {
+  display: none;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.tel-tab-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  transition: var(--transition);
+  text-align: center;
+}
+
+.tel-tab-btn.active {
+  background: var(--accent-color);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Floating Back to Top Button */
+.back-to-top-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.4);
+  z-index: 85;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.8);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.back-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.back-to-top-btn:active {
+  transform: scale(0.92);
+}
+
+/* Modal Drag Handle (Mobile Bottom Sheet) */
+.modal-drag-handle {
+  display: none;
+  width: 44px;
+  height: 5px;
+  background: rgba(148, 163, 184, 0.5);
+  border-radius: var(--radius-full);
+  margin: 12px auto 6px;
+}
+
+/* Touch tactile active states for mobile */
+@media (hover: none) and (pointer: coarse) {
+  button:active, .btn:active, .elevation-pill-btn:active {
+    transform: scale(0.96) !important;
+  }
+}
+
 /* ==========================================================================
    RESPONSIVE DESIGN (MEDIA QUERIES)
    ========================================================================== */
@@ -2181,16 +2258,35 @@ button {
     font-size: 0.9rem;
   }
 
+  .telemetry-mobile-tabs {
+    display: flex;
+  }
+  .telemetry-stats-grid.mobile-hide, .telemetry-bio.mobile-hide {
+    display: none !important;
+  }
+
+  .modal-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
   .modal-dialog {
-    margin: 12px;
-    max-height: 94vh;
-    border-radius: var(--radius-lg);
+    margin: 0;
+    max-height: 90vh;
+    border-radius: 24px 24px 0 0;
+    width: 100%;
+    transform: translateY(100%);
+  }
+  .modal-overlay.active .modal-dialog {
+    transform: translateY(0);
+  }
+  .modal-drag-handle {
+    display: block;
   }
   .modal-hero {
     height: 180px;
   }
   .modal-body {
-    padding: 20px 16px;
+    padding: 20px 16px 36px;
   }
   .modal-info-grid {
     grid-template-columns: 1fr;

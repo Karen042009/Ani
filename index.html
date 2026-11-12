@@ -35,6 +35,7 @@
       </nav>
 
       <div class="header-actions">
+        <button id="shareBtn" class="action-btn" title="Կիսվել հղումով" aria-label="Կիսվել հղումով">🔗</button>
         <button id="audioToggleBtn" class="action-btn" title="Ձայնային էֆեկտներ" aria-label="Ձայնային էֆեկտներ">🔊</button>
         <button id="themeToggleBtn" class="action-btn" title="Փոխել գունային թեման" aria-label="Փոխել գունային թեման">🌙</button>
         <button id="mobileMenuToggle" class="action-btn mobile-menu-toggle" title="Մենյու" aria-label="Մենյու">☰</button>
@@ -275,8 +276,14 @@
               <p class="telemetry-subtitle" id="telZoneSubtitle">1,800 մետր բարձրություն (1400 - 2400 մ)</p>
             </div>
 
+            <!-- Mobile Telemetry Tabs (Only visible on phones) -->
+            <div class="telemetry-mobile-tabs" id="telemetryMobileTabs">
+              <button class="tel-tab-btn active" data-tab="stats">☀️ Կլիմա & Ֆիզիկա</button>
+              <button class="tel-tab-btn" data-tab="nature">🌱 Բնություն & Տեսակներ</button>
+            </div>
+
             <!-- Dynamic Telemetry Stats Grid -->
-            <div class="telemetry-stats-grid">
+            <div class="telemetry-stats-grid" id="telStatsGrid">
               <div class="stat-box">
                 <span class="stat-box-label">☀️ Ամռան ջերմաստիճան</span>
                 <span class="stat-box-value" id="telTempSummer">+18.4°C</span>
@@ -1190,6 +1197,7 @@
        ======================================================================== -->
   <div class="modal-overlay" id="zoneModalOverlay" role="dialog" aria-modal="true">
     <div class="modal-dialog">
+      <div class="modal-drag-handle" aria-hidden="true"></div>
       <button class="modal-close-btn" id="modalCloseBtn" aria-label="Փակել">✕</button>
 
       <div class="modal-hero">
@@ -1349,6 +1357,9 @@
       <span class="bar-label">Քուիզ</span>
     </a>
   </nav>
+
+  <!-- Floating Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top-btn" title="Վերև" aria-label="Վերադառնալ վերև">⬆️</button>
 
   <!-- Scripts -->
   <script src="script.js"></script>

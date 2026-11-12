@@ -231,11 +231,21 @@ class AudioFX {
   chime() {
     this.playTone(587.33, 'triangle', 0.25, 0.05); // D5
     setTimeout(() => this.playTone(880.00, 'sine', 0.35, 0.04), 80); // A5
+    triggerHaptic(20);
   }
 
   tick() {
     this.playTone(440, 'sine', 0.05, 0.015);
+    triggerHaptic(8);
   }
+}
+
+function triggerHaptic(duration = 10) {
+  try {
+    if (typeof navigator !== 'undefined' && navigator.vibrate) {
+      navigator.vibrate(duration);
+    }
+  } catch (e) {}
 }
 
 const audioFX = new AudioFX();
@@ -1063,4 +1073,70 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Mobile Telemetry Tabs Switcher
+  const telMobileTabs = document.querySelectorAll('.tel-tab-btn');
+  const telStatsGrid = document.getElementById('telStatsGrid');
+  const telBio = document.querySelector('.telemetry-bio');
+
+  telMobileTabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      telMobileTabs.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      triggerHaptic(12);
+      const tab = btn.dataset.tab;
+      if (tab === 'nature') {
+        if (telStatsGrid) telStatsGrid.classList.add('mobile-hide');
+        if (telBio) telBio.classList.remove('mobile-hide');
+      } else {
+        if (telStatsGrid) telStatsGrid.classList.remove('mobile-hide');
+        if (telBio) telBio.classList.add('mobile-hide');
+      }
+    });
+  });
+
+  // Default to Cards view automatically on mobile screens (< 768px)
+  if (window.innerWidth <= 768 && window.tableManager) {
+    window.tableManager.setViewMode('cards');
+  }
+
+  // Floating Back to Top Button
+  const backToTopBtn = document.getElementById('backToTopBtn');
+  if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 350) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      triggerHaptic(18);
+    });
+  }
+
+  // Web Share API Integration
+  const shareBtn = document.getElementById('shareBtn');
+  if (shareBtn) {
+    shareBtn.addEventListener('click', async () => {
+      triggerHaptic(15);
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: 'ՀՀ Վերընթաց Լանդշաֆտային Գոտիներ',
+            text: 'Հայաստանի բնության, լեռների և վերընթաց գոտիների ինտերակտիվ ուղեցույց',
+            url: window.location.href
+          });
+        } catch (err) {}
+      } else {
+        try {
+          await navigator.clipboard.writeText(window.location.href);
+          const orig = shareBtn.textContent;
+          shareBtn.textContent = '✅';
+          setTimeout(() => { shareBtn.textContent = orig; }, 1800);
+        } catch (err) {}
+      }
+    });
+  }
 });
