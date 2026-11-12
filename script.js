@@ -481,7 +481,7 @@ function closeZoneModal() {
 }
 
 // ============================================================================
-// 5. TABLE SEARCH, FILTER & EXPORT
+// 5. TABLE SEARCH, FILTER & EXPORT + MOBILE CARDS VIEW
 // ============================================================================
 class TableManager {
   constructor() {
@@ -491,6 +491,13 @@ class TableManager {
     this.btnExportCsv = document.getElementById('btnExportCsv');
     this.btnPrintTable = document.getElementById('btnPrintTable');
     this.activeFilter = 'all';
+
+    // Mobile Table vs Cards view toggles
+    this.btnViewTable = document.getElementById('btnViewTable');
+    this.btnViewCards = document.getElementById('btnViewCards');
+    this.tableResponsiveWrapper = document.getElementById('tableResponsiveWrapper');
+    this.tableCardsMobileView = document.getElementById('tableCardsMobileView');
+    this.mobileSwipeHint = document.getElementById('mobileSwipeHint');
 
     this.init();
   }
@@ -516,11 +523,113 @@ class TableManager {
     if (this.btnPrintTable) {
       this.btnPrintTable.addEventListener('click', () => window.print());
     }
+
+    // Mobile View Toggle Handlers
+    if (this.btnViewTable && this.btnViewCards) {
+      this.btnViewTable.addEventListener('click', () => this.setViewMode('table'));
+      this.btnViewCards.addEventListener('click', () => this.setViewMode('cards'));
+    }
+
+    // Build Mobile Cards DOM initially
+    this.renderMobileCards();
+  }
+
+  setViewMode(mode) {
+    if (mode === 'cards') {
+      this.btnViewTable.classList.remove('active');
+      this.btnViewCards.classList.add('active');
+      if (this.tableResponsiveWrapper) this.tableResponsiveWrapper.style.display = 'none';
+      if (this.tableCardsMobileView) this.tableCardsMobileView.style.display = 'flex';
+      if (this.mobileSwipeHint) this.mobileSwipeHint.style.display = 'none';
+      audioFX.tick();
+    } else {
+      this.btnViewCards.classList.remove('active');
+      this.btnViewTable.classList.add('active');
+      if (this.tableCardsMobileView) this.tableCardsMobileView.style.display = 'none';
+      if (this.tableResponsiveWrapper) this.tableResponsiveWrapper.style.display = '';
+      if (this.mobileSwipeHint && window.innerWidth <= 768) this.mobileSwipeHint.style.display = 'block';
+      audioFX.tick();
+    }
+  }
+
+  renderMobileCards() {
+    if (!this.tableCardsMobileView) return;
+    this.tableCardsMobileView.innerHTML = '';
+
+    const zoneKeys = ['semi-desert', 'dry-steppe', 'mountain-steppe', 'forest', 'alpine', 'nival'];
+    zoneKeys.forEach(key => {
+      const z = ZONES_DATA[key];
+      if (!z) return;
+
+      let category = 'midland';
+      if (key === 'semi-desert') category = 'lowland';
+      else if (key === 'alpine' || key === 'nival') category = 'highland';
+
+      const card = document.createElement('div');
+      card.className = 'mobile-table-card';
+      card.dataset.category = category;
+      card.dataset.zone = z.id;
+      card.style.borderTop = `4px solid ${z.color}`;
+
+      card.innerHTML = `
+        <div class="mobile-card-header">
+          <div class="mobile-card-title">
+            <span class="mobile-card-dot" style="background: ${z.color};"></span>
+            ${z.name}
+          </div>
+          <span class="tbl-badge" style="background: ${z.colorBg}; color: ${z.color};">${z.area}</span>
+        </div>
+        <div class="mobile-card-grid">
+          <div class="m-field">
+            <span class="m-label">📏 Բարձրություն</span>
+            <span class="m-val">${z.elevationText}</span>
+          </div>
+          <div class="m-field">
+            <span class="m-label">🌧️ Տեղումներ</span>
+            <span class="m-val">${z.precip}</span>
+          </div>
+          <div class="m-field">
+            <span class="m-label">🌡️ Ջերմաստիճան</span>
+            <span class="m-val">${z.tempJan} / ${z.tempJuly}</span>
+          </div>
+          <div class="m-field">
+            <span class="m-label">🌱 Հումուս</span>
+            <span class="m-val">${z.humus}</span>
+          </div>
+          <div class="m-field-full">
+            <span class="m-label">📍 Տարածման շրջան</span>
+            <span class="m-val">${z.region}</span>
+          </div>
+          <div class="m-field-full">
+            <span class="m-label">🌾 Հողի տիպ</span>
+            <span class="m-val">${z.soil}</span>
+          </div>
+          <div class="m-field-full">
+            <span class="m-label">🌿 Բուսականություն</span>
+            <span class="m-val">${z.flora}</span>
+          </div>
+          <div class="m-field-full">
+            <span class="m-label">🐾 Կենդանական աշխարհ</span>
+            <span class="m-val">${z.fauna}</span>
+          </div>
+          <div class="m-field-full">
+            <span class="m-label">💧 Գետ / Լիճ</span>
+            <span class="m-val">${z.water}</span>
+          </div>
+        </div>
+        <button class="mobile-card-footer-btn" onclick="openZoneModal('${z.id}')">
+          <span>🔍 Բացել Ամբողջական Մանրամասները ✨</span>
+        </button>
+      `;
+
+      this.tableCardsMobileView.appendChild(card);
+    });
   }
 
   filterTable() {
     const query = this.searchInput ? this.searchInput.value.toLowerCase().trim() : '';
     
+    // Filter Table rows
     this.tableRows.forEach(row => {
       const category = row.dataset.category;
       const text = row.textContent.toLowerCase();
@@ -532,6 +641,22 @@ class TableManager {
         row.style.display = '';
       } else {
         row.style.display = 'none';
+      }
+    });
+
+    // Filter Mobile Cards
+    const mobileCards = document.querySelectorAll('.mobile-table-card');
+    mobileCards.forEach(card => {
+      const category = card.dataset.category;
+      const text = card.textContent.toLowerCase();
+
+      const matchesSearch = query === '' || text.includes(query);
+      const matchesFilter = this.activeFilter === 'all' || category === this.activeFilter;
+
+      if (matchesSearch && matchesFilter) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
       }
     });
   }
@@ -885,21 +1010,56 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Smooth scroll spy for header nav links
+  // Mobile Navigation Drawer Toggle
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const mobileDrawerClose = document.getElementById('mobileDrawerClose');
+  const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+
+  if (mobileMenuToggle && mobileNavDrawer) {
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileNavDrawer.classList.add('open');
+      audioFX.tick();
+    });
+  }
+
+  if (mobileDrawerClose && mobileNavDrawer) {
+    mobileDrawerClose.addEventListener('click', () => {
+      mobileNavDrawer.classList.remove('open');
+      audioFX.tick();
+    });
+  }
+
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      if (mobileNavDrawer) mobileNavDrawer.classList.remove('open');
+    });
+  });
+
+  // Smooth scroll spy for header nav links & mobile bottom bar
   const navLinks = document.querySelectorAll('.nav-link');
+  const mobileBarBtns = document.querySelectorAll('.mobile-bar-btn');
+
   window.addEventListener('scroll', () => {
     let current = '';
     const sections = document.querySelectorAll('section[id]');
     sections.forEach(section => {
-      const top = section.offsetTop - 100;
+      const top = section.offsetTop - 120;
       if (window.scrollY >= top) {
         current = section.getAttribute('id');
       }
     });
+
     navLinks.forEach(link => {
       link.classList.remove('active');
       if (link.getAttribute('href') === `#${current}`) {
         link.classList.add('active');
+      }
+    });
+
+    mobileBarBtns.forEach(btn => {
+      btn.classList.remove('active');
+      if (btn.getAttribute('href') === `#${current}`) {
+        btn.classList.add('active');
       }
     });
   });

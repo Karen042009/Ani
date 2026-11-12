@@ -37,6 +37,30 @@
       <div class="header-actions">
         <button id="audioToggleBtn" class="action-btn" title="Ձայնային էֆեկտներ" aria-label="Ձայնային էֆեկտներ">🔊</button>
         <button id="themeToggleBtn" class="action-btn" title="Փոխել գունային թեման" aria-label="Փոխել գունային թեման">🌙</button>
+        <button id="mobileMenuToggle" class="action-btn mobile-menu-toggle" title="Մենյու" aria-label="Մենյու">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer">
+      <div class="mobile-drawer-header">
+        <div class="logo-text">
+          <span class="logo-title" style="font-weight: 800; font-size: 1.1rem;">ԱրմԼանդշաֆտ</span>
+          <span class="logo-subtitle">ՀՀ Լանդշաֆտային Գոտիներ</span>
+        </div>
+        <button id="mobileDrawerClose" class="action-btn" aria-label="Փակել մենյուն">✕</button>
+      </div>
+      <ul class="mobile-nav-list">
+        <li><a href="#simulator" class="mobile-nav-link">⛰️ Սարի Սիմուլյատոր</a></li>
+        <li><a href="#zones" class="mobile-nav-link">🌿 6 Լանդշաֆտային Գոտիներ</a></li>
+        <li><a href="#tableSection" class="mobile-nav-link">📊 Համեմատական Աղյուսակ</a></li>
+        <li><a href="#chartSection" class="mobile-nav-link">📈 Տարածքային Գրաֆիկ</a></li>
+        <li><a href="#theory" class="mobile-nav-link">🔬 Գիտական Տեսություն</a></li>
+        <li><a href="#facts" class="mobile-nav-link">💡 Բացվող Փաստեր</a></li>
+        <li><a href="#quiz" class="mobile-nav-link">🏆 Ինտերակտիվ Վիկտորինա</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <span>© 2026 ՀՀ Լանդշաֆտային Ուղեցույց</span>
       </div>
     </div>
   </header>
@@ -592,17 +616,29 @@
         </div>
 
         <div class="table-actions-right">
+          <div class="view-mode-toggle" id="tableViewToggleWrap">
+            <button id="btnViewTable" class="view-toggle-btn active" title="Աղյուսակի տեսք">📊 Աղյուսակ</button>
+            <button id="btnViewCards" class="view-toggle-btn" title="Հեռախոսի քարտերի տեսք">📱 Քարտեր</button>
+          </div>
           <button id="btnExportCsv" class="table-action-btn" title="Ներբեռնել CSV ֆայլ">
-            <span>📥 CSV Արտահանում</span>
+            <span>📥 CSV</span>
           </button>
           <button id="btnPrintTable" class="table-action-btn" title="Տպել աղյուսակը">
-            <span>🖨️ Տպել</span>
+            <span>🖨️</span>
           </button>
         </div>
       </div>
 
+      <!-- Mobile Horizontal Scroll Hint -->
+      <div class="mobile-swipe-hint" id="mobileSwipeHint">
+        <span>👈 Սահեցրեք աջ/ձախ՝ բոլոր 12 սյունակները տեսնելու համար 👉</span>
+      </div>
+
+      <!-- Mobile Cards View Container (when Cards mode is toggled) -->
+      <div class="table-cards-mobile-view" id="tableCardsMobileView" style="display: none;"></div>
+
       <!-- Scrollable Table -->
-      <div class="table-responsive-wrapper">
+      <div class="table-responsive-wrapper" id="tableResponsiveWrapper">
         <table class="landscape-table" id="landscapeTable">
           <thead>
             <tr>
@@ -1289,6 +1325,30 @@
       </div>
     </div>
   </footer>
+
+  <!-- Mobile Bottom App Bar (Sticky on phones) -->
+  <nav class="mobile-bottom-bar" aria-label="Հեռախոսի արագ մենյու">
+    <a href="#simulator" class="mobile-bar-btn active">
+      <span class="bar-icon">⛰️</span>
+      <span class="bar-label">Սար</span>
+    </a>
+    <a href="#zones" class="mobile-bar-btn">
+      <span class="bar-icon">🌿</span>
+      <span class="bar-label">Գոտիներ</span>
+    </a>
+    <a href="#tableSection" class="mobile-bar-btn">
+      <span class="bar-icon">📊</span>
+      <span class="bar-label">Աղյուսակ</span>
+    </a>
+    <a href="#facts" class="mobile-bar-btn">
+      <span class="bar-icon">💡</span>
+      <span class="bar-label">Փաստեր</span>
+    </a>
+    <a href="#quiz" class="mobile-bar-btn">
+      <span class="bar-icon">🏆</span>
+      <span class="bar-label">Քուիզ</span>
+    </a>
+  </nav>
 
   <!-- Scripts -->
   <script src="script.js"></script>
